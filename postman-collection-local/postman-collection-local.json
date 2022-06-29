@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "39c26afe-c87f-4906-acd5-1f192c8e5a17",
+		"name": "apix-generic-db-sapi-local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Update employee details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-CORRELATION-ID",
+						"value": "1234",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-ID",
+						"value": "4ec28e03f8144bdb894f5bb08c742c5d",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-SECRET",
+						"value": "349693586c6A40f4BD37E5F2f44cCE3F",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"emailid\": \"fathimachechi@gmail.com\",\r\n  \"phoneNumber\": \"9096438192\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/employee/76",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"76"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get employee by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CORRELATION-ID",
+						"value": "1234",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-ID",
+						"value": "4ec28e03f8144bdb894f5bb08c742c5d",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-SECRET",
+						"value": "349693586c6A40f4BD37E5F2f44cCE3F",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/employee/76",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"76"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Readyness",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "1234",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/ready",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"ready"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all employee details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CORRELATION-ID",
+						"value": "1234",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-ID",
+						"value": "4ec28e03f8144bdb894f5bb08c742c5d",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-SECRET",
+						"value": "349693586c6A40f4BD37E5F2f44cCE3F",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post employee details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-CORRELATION-ID",
+						"value": "1234",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-ID",
+						"value": "4ec28e03f8144bdb894f5bb08c742c5d",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-SECRET",
+						"value": "349693586c6A40f4BD37E5F2f44cCE3F",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"emailid\": \"fathima@gmail.com\",\r\n  \"firstName\": \"fathima\",\r\n  \"lastName\": \"fathima\",\r\n  \"phoneNumber\": \"9748378192\",\r\n  \"age\": 33\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employee details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-CORRELATION-ID",
+						"value": "1234",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-ID",
+						"value": "4ec28e03f8144bdb894f5bb08c742c5d",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-SECRET",
+						"value": "349693586c6A40f4BD37E5F2f44cCE3F",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/employee/48",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "live",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/live",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"live"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
